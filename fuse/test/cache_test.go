@@ -14,10 +14,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hanwen/go-fuse/v2/fuse"
-	"github.com/hanwen/go-fuse/v2/fuse/nodefs"
-	"github.com/hanwen/go-fuse/v2/fuse/pathfs"
-	"github.com/hanwen/go-fuse/v2/internal/testutil"
+	"github.com/relvox/go-fuse/v2/fuse"
+	"github.com/relvox/go-fuse/v2/fuse/nodefs"
+	"github.com/relvox/go-fuse/v2/fuse/pathfs"
+	"github.com/relvox/go-fuse/v2/internal/testutil"
 )
 
 type cacheFs struct {
@@ -104,7 +104,7 @@ func TestFopenKeepCache(t *testing.T) {
 
 	// XXX Linux FUSE client automatically invalidates cache of a file if it sees size change.
 	//     As workaround we keep len(before) == len(after) to avoid that codepath.
-	//     See https://github.com/hanwen/go-fuse/pull/273 for details.
+	//     See https://github.com/relvox/go-fuse/pull/273 for details.
 	//
 	// TODO use len(before) != len(after) if kernel supports precise control over data cache.
 	before := "before"

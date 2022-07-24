@@ -16,9 +16,9 @@ import (
 
 	"golang.org/x/sync/errgroup"
 
-	"github.com/hanwen/go-fuse/v2/fuse"
-	"github.com/hanwen/go-fuse/v2/fuse/nodefs"
-	"github.com/hanwen/go-fuse/v2/internal/testutil"
+	"github.com/relvox/go-fuse/v2/fuse"
+	"github.com/relvox/go-fuse/v2/fuse/nodefs"
+	"github.com/relvox/go-fuse/v2/internal/testutil"
 )
 
 // tRoot implements simple root node which Lookups children in predefined .nodes.
@@ -44,7 +44,6 @@ func (r *tRoot) Lookup(out *fuse.Attr, name string, fctx *fuse.Context) (*nodefs
 	st := node.GetAttr(out, nil, fctx)
 	return node.Inode(), st
 }
-
 
 // verifyFileRead verifies that file @path has content == dataOK.
 func verifyFileRead(path string, dataOK string) error {
@@ -99,21 +98,21 @@ func TestNodeParallelLookup(t *testing.T) {
 	}()
 
 	// the test will deadlock if the client cannot issue several lookups simultaneously
-	if srv.KernelSettings().Flags & fuse.CAP_PARALLEL_DIROPS == 0 {
+	if srv.KernelSettings().Flags&fuse.CAP_PARALLEL_DIROPS == 0 {
 		t.Skip("Kernel serializes dir lookups")
 	}
 
 	// spawn 2 threads to access the files in parallel
 	// this will deadlock if nodefs does not allow simultaneous Lookups to be handled.
-	// see https://github.com/hanwen/go-fuse/commit/d0fca860 for context.
+	// see https://github.com/relvox/go-fuse/commit/d0fca860 for context.
 	ctx0, cancel := context.WithCancel(context.Background())
 	defer cancel()
 	wg, ctx := errgroup.WithContext(ctx0)
 	wg.Go(func() error {
-		return verifyFileRead(dir + "/hello", "abc")
+		return verifyFileRead(dir+"/hello", "abc")
 	})
 	wg.Go(func() error {
-		return verifyFileRead(dir + "/world", "def")
+		return verifyFileRead(dir+"/world", "def")
 	})
 
 	// wait till both threads queue into Lookup

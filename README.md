@@ -1,26 +1,26 @@
 # GO-FUSE
 
-[![CI](https://github.com/hanwen/go-fuse/actions/workflows/ci.yml/badge.svg)](https://github.com/hanwen/go-fuse/actions/workflows/ci.yml)
-[![GoDoc](https://godoc.org/github.com/hanwen/go-fuse?status.svg)](https://godoc.org/github.com/hanwen/go-fuse)
+[![CI](https://github.com/relvox/go-fuse/actions/workflows/ci.yml/badge.svg)](https://github.com/relvox/go-fuse/actions/workflows/ci.yml)
+[![GoDoc](https://godoc.org/github.com/relvox/go-fuse?status.svg)](https://godoc.org/github.com/relvox/go-fuse)
 
 Go native bindings for the FUSE kernel module.
 
 You should import and use
-[github.com/hanwen/go-fuse/fs](https://godoc.org/github.com/hanwen/go-fuse/fs)
+[github.com/relvox/go-fuse/fs](https://godoc.org/github.com/relvox/go-fuse/fs)
 library.  It follows the wire protocol closely, but provides
 convenient abstractions for building both node and path based file
 systems
 
 Older, deprecated APIs are available at
-[github.com/hanwen/go-fuse/fuse/pathfs](https://godoc.org/github.com/hanwen/go-fuse/fuse/pathfs)
+[github.com/relvox/go-fuse/fuse/pathfs](https://godoc.org/github.com/relvox/go-fuse/fuse/pathfs)
 and
-[github.com/hanwen/go-fuse/fuse/nodefs](https://godoc.org/github.com/hanwen/go-fuse/fuse/nodefs).
+[github.com/relvox/go-fuse/fuse/nodefs](https://godoc.org/github.com/relvox/go-fuse/fuse/nodefs).
 
 ## Comparison with other FUSE libraries
 
 The FUSE library gained a new, cleaned-up API during a rewrite
 completed in 2019. Find extensive documentation
-[here](https://godoc.org/github.com/hanwen/go-fuse/).
+[here](https://godoc.org/github.com/relvox/go-fuse/).
 
 Further highlights of this library is
 
@@ -82,7 +82,7 @@ go-fuse works somewhat on OSX. Known limitations:
 ## Bugs
 
 Yes, probably.  Report them through
-https://github.com/hanwen/go-fuse/issues
+https://github.com/relvox/go-fuse/issues
 
 ## Disclaimer
 

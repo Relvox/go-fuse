@@ -1,3 +1,4 @@
+//go:build darwin
 // +build darwin
 
 // Copyright 2019 the Go-FUSE Authors. All rights reserved.
@@ -12,8 +13,8 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/hanwen/go-fuse/v2/fuse"
-	"github.com/hanwen/go-fuse/v2/internal/utimens"
+	"github.com/relvox/go-fuse/v2/fuse"
+	"github.com/relvox/go-fuse/v2/internal/utimens"
 )
 
 func (n *LoopbackNode) Getxattr(ctx context.Context, attr string, dest []byte) (uint32, syscall.Errno) {

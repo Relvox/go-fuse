@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 // statfs is a main driver for the file system from
-// github.com/hanwen/go-fuse/benchmark, intended for benchmarking FUSE
+// github.com/relvox/go-fuse/benchmark, intended for benchmarking FUSE
 // libraries.
 package main
 
@@ -20,9 +20,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/hanwen/go-fuse/v2/benchmark"
-	"github.com/hanwen/go-fuse/v2/fs"
-	"github.com/hanwen/go-fuse/v2/fuse"
+	"github.com/relvox/go-fuse/v2/benchmark"
+	"github.com/relvox/go-fuse/v2/fs"
+	"github.com/relvox/go-fuse/v2/fuse"
 )
 
 func main() {

@@ -10,10 +10,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hanwen/go-fuse/v2/fuse"
-	"github.com/hanwen/go-fuse/v2/fuse/nodefs"
-	"github.com/hanwen/go-fuse/v2/fuse/pathfs"
-	"github.com/hanwen/go-fuse/v2/internal/testutil"
+	"github.com/relvox/go-fuse/v2/fuse"
+	"github.com/relvox/go-fuse/v2/fuse/nodefs"
+	"github.com/relvox/go-fuse/v2/fuse/pathfs"
+	"github.com/relvox/go-fuse/v2/internal/testutil"
 )
 
 type MutableDataFile struct {

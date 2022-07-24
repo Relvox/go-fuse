@@ -10,9 +10,9 @@ import (
 	"path"
 	"testing"
 
-	"github.com/hanwen/go-fuse/v2/fuse"
-	"github.com/hanwen/go-fuse/v2/fuse/nodefs"
-	"github.com/hanwen/go-fuse/v2/internal/testutil"
+	"github.com/relvox/go-fuse/v2/fuse"
+	"github.com/relvox/go-fuse/v2/fuse/nodefs"
+	"github.com/relvox/go-fuse/v2/internal/testutil"
 )
 
 func TestDefaultNodeGetAttr(t *testing.T) {

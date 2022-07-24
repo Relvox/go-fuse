@@ -43,8 +43,8 @@ func (p *Pair) Cap() int {
 }
 
 func (p *Pair) Close() error {
-	err1 := syscall.Close(p.r)
-	err2 := syscall.Close(p.w)
+	err1 := syscall.Close(syscall.Handle(p.r))
+	err2 := syscall.Close(syscall.Handle(p.w))
 	if err1 != nil {
 		return err1
 	}
@@ -52,11 +52,11 @@ func (p *Pair) Close() error {
 }
 
 func (p *Pair) Read(d []byte) (n int, err error) {
-	return syscall.Read(p.r, d)
+	return syscall.Read(syscall.Handle(p.r), d)
 }
 
 func (p *Pair) Write(d []byte) (n int, err error) {
-	return syscall.Write(p.w, d)
+	return syscall.Write(syscall.Handle(p.w), d)
 }
 
 func (p *Pair) ReadFd() uintptr {
