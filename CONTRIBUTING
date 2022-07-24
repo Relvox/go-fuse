@@ -19,4 +19,4 @@ For complex changes, please use Gerrit:
 
 * Push the change for review,
 
-  git push ssh://$USER@review.gerrithub.io:29418/hanwen/go-fuse HEAD:refs/for/master
+  git push ssh://$USER@review.gerrithub.io:29418/relvox/go-fuse HEAD:refs/for/master

@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 // This is main program driver for the loopback filesystem from
-// github.com/hanwen/go-fuse/fs/, a filesystem that shunts operations
+// github.com/relvox/go-fuse/fs/, a filesystem that shunts operations
 // to an underlying file system.
 package main
 
@@ -18,7 +18,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/hanwen/go-fuse/v2/fs"
+	"github.com/relvox/go-fuse/v2/fs"
 )
 
 func writeMemProfile(fn string, sigs <-chan os.Signal) {
